@@ -30,9 +30,6 @@ const DeletedItemsProvider = ({ children }: DeletedItemsProviderProps) => {
     setDeletedItems,
     deletedItems,
   };
-  for (const item of deletedItems) {
-    console.log(item.value);
-  }
 
   return (
     <delItemsContext.Provider value={contextValue}>

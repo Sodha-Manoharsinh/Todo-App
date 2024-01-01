@@ -1,3 +1,4 @@
+import { useHistoryContext } from "./Context/HistoryProvider";
 import { TodoItemsType } from "./Context/ItemsProvider";
 
 type ItemProps = {
@@ -7,15 +8,21 @@ type ItemProps = {
 };
 
 const Item = ({ item, handleDelete, handleCheckChange }: ItemProps) => {
+  const [history] = useHistoryContext();
+
   return (
     <tr draggable role="row">
       <td>
-        <input
-          type="checkbox"
-          className="checkbox"
-          checked={item.checked}
-          onChange={(e) => handleCheckChange(item.id, e.target.checked)}
-        />
+        {!history ? (
+          <input
+            type="checkbox"
+            className="checkbox"
+            checked={item.checked}
+            onChange={(e) => handleCheckChange(item.id, e.target.checked)}
+          />
+        ) : (
+          <div>{item.checked ? "Completed" : "Not Completed"}</div>
+        )}
       </td>
       <td className="task">{item.value}</td>
       <td>{item.date}</td>

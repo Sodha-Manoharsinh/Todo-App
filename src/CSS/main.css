@@ -141,6 +141,10 @@ header > h1 {
   color: var(--second-color);
   font-size: 1em;
 }
+
+option {
+  text-transform: capitalize;
+}
 /* here comes sorting style  */
 
 /* List styles */

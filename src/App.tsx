@@ -1,14 +1,17 @@
 import MainCard from "./components/MainCard";
 import SortProvider from "./components/Context/SortProvider";
 import ItemsProvider from "./components/Context/ItemsProvider";
+import HistoryProvider from "./components/Context/HistoryProvider";
 
 function App() {
   return (
-    <ItemsProvider>
-      <SortProvider>
-        <MainCard />
-      </SortProvider>
-    </ItemsProvider>
+    <HistoryProvider>
+      <ItemsProvider>
+        <SortProvider>
+          <MainCard />
+        </SortProvider>
+      </ItemsProvider>
+    </HistoryProvider>
   );
 }
 

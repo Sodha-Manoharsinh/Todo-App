@@ -1,10 +1,9 @@
+import { useEffect, useState } from "react";
 import Item from "./Item";
 import { TodoItemsType, useItemsContext } from "./Context/ItemsProvider";
 import { useSortContext } from "./Context/SortProvider";
-import getSortedItems from "./UsefulFunctions/getSortedItems";
-import { useEffect, useState } from "react";
-import setDeletedTodos from "./UsefulFunctions/setDeletedTodos";
 import { useDeletedItemsContext } from "./Context/DeletedItemsProvider";
+import getSortedItems from "./UsefulFunctions/getSortedItems";
 
 const Table = () => {
   const [sortedItems, setSortedItems] = useState<TodoItemsType[]>([]);
@@ -23,10 +22,10 @@ const Table = () => {
   getSortedItems({ sort, items });
 
   const handleDelete = (id: number) => {
-    let deletedItems = [];
+    let deletedItems: TodoItemsType[] = [];
     deletedItems = items.filter((item) => item.id === id);
 
-    setDeletedItems(deletedItems);
+    setDeletedItems((prevItems) => [...prevItems, ...deletedItems]);
 
     setItems((prevItems) =>
       prevItems.filter((item) => {

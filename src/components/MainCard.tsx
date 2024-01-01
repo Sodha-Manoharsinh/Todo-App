@@ -1,16 +1,20 @@
 import "../CSS/main.css";
 import DeletedItemsProvider from "./Context/DeletedItemsProvider";
+import { useHistoryContext } from "./Context/HistoryProvider";
 import Header from "./Header";
+import History from "./History";
 import Navbar from "./Navbar";
 import Table from "./Table";
 
 const MainCard = () => {
+  const [showHistory] = useHistoryContext();
+
   return (
     <div className="container">
       <Navbar />
       <Header />
       <DeletedItemsProvider>
-        <Table />
+        {showHistory ? <History /> : <Table />}
       </DeletedItemsProvider>
     </div>
   );
