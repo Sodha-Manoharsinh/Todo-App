@@ -1,4 +1,10 @@
-import { ReactNode, useContext, useState, createContext } from "react";
+import {
+  ReactNode,
+  useContext,
+  useState,
+  createContext,
+  useEffect,
+} from "react";
 import { TodoItemsType } from "./ItemsProvider";
 
 type DeletedItemsProviderProps = {
@@ -25,11 +31,21 @@ export const useDeletedItemsContext = (): DeletedItemsContextType => {
 };
 
 const DeletedItemsProvider = ({ children }: DeletedItemsProviderProps) => {
-  const [deletedItems, setDeletedItems] = useState<TodoItemsType[]>([]);
+  const [deletedItems, setDeletedItems] = useState<TodoItemsType[]>(() => {
+    const localValue = localStorage.getItem("DELETED_ITEMS");
+    if (localValue == null) {
+      return [];
+    }
+    return JSON.parse(localValue);
+  });
   const contextValue = {
     setDeletedItems,
     deletedItems,
   };
+
+  useEffect(() => {
+    localStorage.setItem("DELETED_ITEMS", JSON.stringify(deletedItems));
+  }, [deletedItems]);
 
   return (
     <delItemsContext.Provider value={contextValue}>

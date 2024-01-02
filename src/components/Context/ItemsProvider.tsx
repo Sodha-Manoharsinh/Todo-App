@@ -1,4 +1,10 @@
-import { ReactNode, createContext, useContext, useState } from "react";
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 export type TodoItemsType = {
   checked: boolean;
@@ -28,7 +34,18 @@ export const useItemsContext = (): ItemsContextType => {
 };
 
 const ItemsProvider = ({ children }: ItemsProviderProps) => {
-  const [items, setItems] = useState<TodoItemsType[]>([]);
+  const [items, setItems] = useState<TodoItemsType[]>(() => {
+    const localValue = localStorage.getItem("ITEMS");
+    if (localValue == null) {
+      return [];
+    }
+    return JSON.parse(localValue);
+  });
+
+  useEffect(() => {
+    localStorage.setItem("ITEMS", JSON.stringify(items));
+  }, [items]);
+
   return (
     <SortContext.Provider value={[items, setItems]}>
       {children}
