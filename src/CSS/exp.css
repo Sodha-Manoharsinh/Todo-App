@@ -1,0 +1,292 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: #051225;
+  --first-color: #ffffff;
+  --second-color: #002aff;
+  --text-font-size: 1em;
+  --btn-font-size: 0.75em;
+}
+
+.container {
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.btn {
+  padding: 0.5em 1em;
+  font-size: var(--btn-font-size);
+  font-weight: bold;
+  color: var(--second-color);
+  background-color: var(--first-color);
+  border: none;
+  border-radius: 0.75em;
+}
+
+/* Navbar */
+
+.navbar {
+  background: var(--second-color);
+  color: var(--first-color);
+  padding: 1em 0.5em;
+}
+
+/* Upper nav */
+
+.upper-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 1.5em;
+}
+.upper-nav-text {
+  font-size: calc(var(--text-font-size) + 0.5em);
+  font-weight: bold;
+}
+
+.color-selector-container {
+  position: relative;
+  overflow: hidden;
+  width: 35px;
+  height: 35px;
+  border: solid 2px #ddd;
+  border-radius: 35px;
+  box-shadow: 1px 1px 3px 1px rgb(180, 178, 178);
+  margin: 0px 1em;
+}
+
+.color-selector {
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  height: 56px;
+  width: 56px;
+  border: none;
+}
+
+.upper-nav-box {
+  display: flex;
+}
+
+/* Lower nav */
+.lower-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lower-nav-text {
+  display: none;
+  font-size: calc(var(--text-font-size) + 0.25em);
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+#todo-input {
+  min-width: 40vw;
+  padding: 5px 10px;
+  font-size: var(--text-font-size);
+  border: none;
+  text-transform: capitalize;
+  border-radius: 0.75em 0px 0.75em 0px;
+  box-shadow: 2px 2px 2px 0px white;
+  margin-right: 0.5em;
+  outline: none;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header > h1 {
+  font-size: calc(var(--text-font-size) + 0.5em);
+  text-align: center;
+  color: var(--second-color);
+}
+
+.select {
+  color: var(--second-color);
+  text-align: end;
+  padding-right: 1em;
+}
+
+.sort-text {
+  font-size: 1em;
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+
+#sort {
+  border: 2px solid var(--second-color);
+  border-radius: 0.75em 0px 0.75em 0px;
+  padding: 5px 5px;
+  color: var(--second-color);
+  font-size: 0.7em;
+}
+
+/* table */
+
+table {
+  margin-top: 0.5em;
+  border: 3px solid var(--second-color);
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead {
+  background-color: var(--second-color);
+  color: var(--first-color);
+  height: 2.5em;
+}
+
+td,
+th {
+  font-size: 0.85em;
+  text-align: center;
+  cursor: default;
+}
+
+td {
+  color: var(--second-color);
+  font-weight: bold;
+  height: 2.5em;
+  border-bottom: 5px solid var(--second-color);
+}
+
+.task {
+  text-transform: capitalize;
+}
+
+td:nth-child(1),
+th:nth-child(1) {
+  width: 15%;
+}
+
+td:nth-child(2),
+th:nth-child(2) {
+  width: 20%;
+}
+
+td:nth-child(3),
+th:nth-child(3) {
+  width: 15%;
+}
+
+td:nth-child(4),
+th:nth-child(4) {
+  width: 15%;
+}
+
+td:nth-child(5),
+th:nth-child(5) {
+  width: 10%;
+}
+
+.del-btn {
+  color: var(--second-color);
+  font-size: 1.5em;
+}
+
+#checkbox {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+/* xs */
+@media (min-width: 475px) {
+  .container {
+    max-width: 475px;
+  }
+}
+
+/* sm */
+@media (min-width: 640px) {
+  :root {
+    --text-font-size: 1.25em;
+    --btn-font-size: 1em;
+  }
+  .container {
+    max-width: 640px;
+  }
+  .upper-nav {
+    justify-content: space-between;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  #todo-input {
+    min-width: 20em;
+  }
+
+  .lower-nav-text {
+    display: block;
+  }
+
+  td,
+  th {
+    font-size: 1em;
+    height: 4em;
+  }
+
+  .sort-text {
+    font-size: 1.25em;
+  }
+
+  #sort {
+    font-size: 0.9em;
+  }
+}
+
+.btn-hover:hover {
+  cursor: pointer;
+}
+
+/* md */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+
+  td,
+  th {
+    font-size: 1.2em;
+    height: 4em;
+  }
+
+  .sort-text {
+    font-size: 1.5em;
+  }
+
+  #sort {
+    font-size: 1.2em;
+  }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}

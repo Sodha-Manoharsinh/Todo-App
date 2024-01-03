@@ -4,9 +4,10 @@
 }
 
 :root {
-  --background-color: #75aaff;
+  --background-color: #051225;
   --first-color: #ffffff;
-  --second-color: #2649f9;
+  /* --second-color: #2649f9; */
+  --second-color: #002aff;
   --forth-color: #9615db;
   --button-input-size: 18px;
 }
@@ -17,10 +18,7 @@ body {
 
 .container {
   background: var(--first-color);
-  max-width: 800px;
-  margin: 0 auto;
-  /* border: 2px solid black; */
-  min-height: 100vh;
+  min-height: 70vh;
 }
 
 /* Button styles */

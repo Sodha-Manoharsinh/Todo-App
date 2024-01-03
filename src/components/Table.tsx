@@ -50,7 +50,7 @@ const Table = () => {
       <table className="table">
         <thead>
           <tr>
-            <th className="th">Status</th>
+            <th>Status</th>
             <th>Task</th>
             <th>Date</th>
             <th>Time</th>

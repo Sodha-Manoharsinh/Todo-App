@@ -52,7 +52,7 @@ const LowerNav = () => {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <button className="btn">Add</button>
+      <button className="btn btn-hover">Add</button>
     </form>
   );
 };

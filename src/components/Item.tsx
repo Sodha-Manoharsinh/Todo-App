@@ -16,7 +16,7 @@ const Item = ({ item, handleDelete, handleCheckChange }: ItemProps) => {
         {!history ? (
           <input
             type="checkbox"
-            className="checkbox"
+            id="checkbox"
             checked={item.checked}
             onChange={(e) => handleCheckChange(item.id, e.target.checked)}
           />
@@ -28,9 +28,10 @@ const Item = ({ item, handleDelete, handleCheckChange }: ItemProps) => {
       <td>{item.date}</td>
       <td>{item.time}</td>
       <td>
-        <button className="del-btn" onClick={() => handleDelete(item.id)}>
-          Delete
-        </button>
+        <i
+          onClick={() => handleDelete(item.id)}
+          className="fa fa-trash-o del-btn btn-hover"
+        ></i>
       </td>
     </tr>
   );

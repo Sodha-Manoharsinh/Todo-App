@@ -10,7 +10,7 @@ const UpperNav = () => {
         <div className="color-selector-container">
           <input type="color" className="color-selector" />
         </div>
-        <button className="btn" onClick={() => setHistory(!history)}>
+        <button className="btn btn-hover" onClick={() => setHistory(!history)}>
           {history ? "Back" : "History"}
         </button>
       </div>
