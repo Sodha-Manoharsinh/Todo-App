@@ -70,9 +70,7 @@ const Table = () => {
           </>
         </tbody>
       </table>
-      {items.length === 0 && (
-        <div className="sort-text add-text">Add Todo List</div>
-      )}
+      {items.length === 0 && <div className="no-list-text">Add Todo List</div>}
     </>
   );
 };

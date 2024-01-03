@@ -35,7 +35,7 @@ const History = () => {
         </tbody>
       </table>
       {deletedItems.length === 0 && (
-        <div className="sort-text add-text">Nothing Deleted</div>
+        <div className="no-list-text">Nothing Deleted</div>
       )}
     </>
   );

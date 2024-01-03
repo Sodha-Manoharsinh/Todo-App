@@ -158,7 +158,7 @@ th {
 td {
   color: var(--second-color);
   font-weight: bold;
-  height: 2.5em;
+  height: 3.5em;
   border-bottom: 5px solid var(--second-color);
 }
 
@@ -201,6 +201,14 @@ th:nth-child(5) {
   height: 1.5em;
 }
 
+.no-list-text {
+  text-align: center;
+  margin-top: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--second-color);
+}
+
 /* xs */
 @media (min-width: 475px) {
   .container {
@@ -233,7 +241,7 @@ th:nth-child(5) {
   td,
   th {
     font-size: 1em;
-    height: 4em;
+    height: 3em;
   }
 
   .sort-text {
